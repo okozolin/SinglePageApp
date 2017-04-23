@@ -50,7 +50,8 @@
             <button ng-click="ctrl1.removeItem($index); ctrl1.addItem(item.name ,item.quantity);">Bought</button>
           </li>
         </ul>
-        <div class="emptyMessage">Everything is bought!</div>
+        <!--<div class="emptyMessage">Everything is bought!</div>-->
+        <div ng-if="ctrl1.emptyMessage" class="emptyMessage">{{ctrl1.emptyMessage}}</div>
       </div>
 
       <!-- ******* Already Bought List ******* -->
@@ -60,7 +61,8 @@
           <!--<li>Bought 10 cookies</li>-->
           <li ng-repeat="item in ctrl2.items">{{$index +1}}. Bought {{ item.quantity }} {{ item.name }}</li>
         </ul>
-        <div class="emptyMessage">Nothing bought yet.</div>
+        <!--<div class="emptyMessage">Nothing bought yet.</div>-->
+        <div ng-if="ctrl2.NothingBought()" class="emptyMessage">Nothing bought yet.</div>
       </div>
     </div>
   </div>
